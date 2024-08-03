@@ -3,6 +3,7 @@ import { useState } from "react";
 import AudioUploader from "../components/AudioUploader";
 import VideoUploader from "../components/VideoUploader";
 import axios from "../utils/axios";
+import { error } from "../utils/toast";
 
 const LipSync = () => {
     const [audio, setAudio] = useState();
@@ -10,11 +11,15 @@ const LipSync = () => {
     const [src, setSRC] = useState('');
 
     const handleProcess = async () => {
-        const formData = new FormData();
-        formData.append('audio', audio);
-        formData.append('video', video);
-        const { data } = await axios.post('/process', formData);
-        setSRC(`${import.meta.env.VITE_BACKEND_URL}/uploads/${data.url}`);
+        try {
+            const formData = new FormData();
+            formData.append('audio', audio);
+            formData.append('video', video);
+            const { data } = await axios.post('/process', formData);
+            setSRC(`${import.meta.env.VITE_BACKEND_URL}/uploads/${data.url}`);
+        } catch (err) {
+            error(err.message);
+        }
     }
 
     return (
