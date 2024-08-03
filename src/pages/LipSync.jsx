@@ -16,7 +16,7 @@ const LipSync = () => {
             formData.append('audio', audio);
             formData.append('video', video);
             const { data } = await axios.post('/process', formData);
-            setSRC(`${import.meta.env.VITE_APP_URL}/api/uploads/${data.url}`);
+            setSRC(`${import.meta.env.VITE_APP_URL}/uploads/${data.url}`);
         } catch (err) {
             error(err.message);
         }
