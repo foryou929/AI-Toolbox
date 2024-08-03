@@ -7,11 +7,14 @@ import axios from "../utils/axios";
 const LipSync = () => {
     const [audio, setAudio] = useState();
     const [video, setVideo] = useState();
+    const [src, setSRC] = useState('');
+
     const handleProcess = async () => {
         const formData = new FormData();
         formData.append('audio', audio);
         formData.append('video', video);
-        await axios.post('/process', formData);
+        const { data } = await axios.post('/process', formData);
+        setSRC(`${import.meta.env.VITE_BACKEND_URL}/uploads/${data.url}`);
     }
 
     return (
@@ -23,7 +26,7 @@ const LipSync = () => {
                 </Flex>
                 <Flex w='100%' direction='column' gap={4}>
                     <Box aspectRatio={1.7778} border='2px dashed #888' overflow='hidden'>
-                        <video controls style={{ width: '100%', height: '100%' }} />
+                        <video src={src} controls style={{ width: '100%', height: '100%' }} />
                     </Box>
                     <Flex justify='right'>
                         <Button isDisabled={!audio || !video} onClick={handleProcess}>
