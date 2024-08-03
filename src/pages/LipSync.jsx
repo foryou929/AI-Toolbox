@@ -17,7 +17,7 @@ const LipSync = () => {
             const formData = new FormData();
             formData.append('audio', audio);
             formData.append('video', video);
-            const { data } = await axios.post('/process', formData);
+            const { data } = await axios.post('/asdf/process', formData);
             setSRC(`${import.meta.env.VITE_APP_URL}/uploads/${data.url}`);
         } catch (err) {
             error(err.message);
@@ -38,7 +38,7 @@ const LipSync = () => {
                     </Box>
                     <Flex justify='right'>
                         <Button isDisabled={!audio || !video || isProcessing} onClick={handleProcess}>
-                            {isProcessing && <Spinner mr={2} />}
+                            {isProcessing && <Spinner size='sm' mr={2} />}
                             Process
                         </Button>
                     </Flex>
