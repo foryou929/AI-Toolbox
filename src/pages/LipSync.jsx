@@ -1,4 +1,4 @@
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex, Spinner } from "@chakra-ui/react";
 import { useState } from "react";
 import AudioUploader from "../components/AudioUploader";
 import VideoUploader from "../components/VideoUploader";
@@ -9,8 +9,10 @@ const LipSync = () => {
     const [audio, setAudio] = useState();
     const [video, setVideo] = useState();
     const [src, setSRC] = useState('');
+    const [isProcessing, setIsProcessing] = useState(false);
 
     const handleProcess = async () => {
+        setIsProcessing(true);
         try {
             const formData = new FormData();
             formData.append('audio', audio);
@@ -20,6 +22,7 @@ const LipSync = () => {
         } catch (err) {
             error(err.message);
         }
+        setIsProcessing(false);
     }
 
     return (
@@ -34,7 +37,8 @@ const LipSync = () => {
                         <video src={src} controls style={{ width: '100%', height: '100%' }} />
                     </Box>
                     <Flex justify='right'>
-                        <Button isDisabled={!audio || !video} onClick={handleProcess}>
+                        <Button isDisabled={!audio || !video || isProcessing} onClick={handleProcess}>
+                            {isProcessing && <Spinner mr={2} />}
                             Process
                         </Button>
                     </Flex>
