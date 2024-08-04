@@ -7,10 +7,10 @@ const Dashboard = () => {
     return (
         <Flex h='100%' justify='center' align='center' bg='black'>
             <ButtonGroup zIndex={5}>
-                <Button onClick={() => navigate('/lip-sync')}>
+                <Button size='lg' bgGradient='linear(to-b, #497CFF, #001664)' _hover={{ bg: 'unset' }} color='white' onClick={() => navigate('/lip-sync')}>
                     Lip sync
                 </Button>
-                <Button onClick={() => navigate('/live-portrait')}>
+                <Button size='lg' bgGradient='linear(to-b, #497CFF, #001664)' _hover={{ bg: 'unset' }} color='white' onClick={() => navigate('/live-portrait')}>
                     Live portrait
                 </Button>
             </ButtonGroup>
