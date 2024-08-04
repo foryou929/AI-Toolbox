@@ -39,7 +39,7 @@ const LipSync = () => {
                         </Flex>
                         <Flex direction='column' gap={2}>
                             <Text fontSize='large' fontWeight='bold' color='white'>Audio</Text>
-                            <AudioUploader w='100%' as={Flex} justify='center' bg='#FFF4' border='2px dashed #888' onChange={setAudio} />
+                            <AudioUploader w='100%' aspectRatio={1.7778} as={Flex} justify='center' bg='#FFF4' border='2px dashed #888' onChange={setAudio} />
                         </Flex>
                     </Flex>
                     <Flex w='100%' direction='column' gap={4}>
