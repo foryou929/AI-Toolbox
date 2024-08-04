@@ -25,7 +25,7 @@ const ImageUploader = ({ onChange, ...rest }) => {
     return (
         <Box {...rest}>
             {isValid ? (
-                <Box w='100%' h='100%' position='relative'>
+                <Box w='100%' position='relative' aspectRatio={1.7778}>
                     <Flex
                         position='absolute' right={2} top={2} zIndex={5}
                         w={6} h={6}
@@ -35,7 +35,7 @@ const ImageUploader = ({ onChange, ...rest }) => {
                     >
                         <CloseIcon fontSize='x-small' color='white' />
                     </Flex>
-                    <img src={src} onError={handleError} />
+                    <img src={src} onError={handleError} style={{ width: '100%', height: '100%', objectFit: 'scale-down' }} />
                 </Box>
             ) : (
                 <DragDropUpload

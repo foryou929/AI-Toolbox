@@ -25,7 +25,7 @@ const VideoUploader = ({ onChange, ...rest }) => {
     return (
         <Box position='relative' {...rest}>
             {isValid ? (
-                <Flex position='relative' w='100%' p={4} justify='center'>
+                <Flex position='relative' w='100%' p={4} justify='center' align='center'>
                     <Flex
                         position='absolute' right={2} top={2} zIndex={5}
                         w={6} h={6}
