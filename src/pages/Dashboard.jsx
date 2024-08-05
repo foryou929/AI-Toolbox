@@ -18,10 +18,10 @@ const Dashboard = () => {
                 in any digital experience.
             </Text>
             <ButtonGroup zIndex={5}>
-                <Button size='lg' bgGradient='linear(to-b, #497CFF, #001664)' _hover={{ bg: 'unset' }} onClick={() => navigate('/lip-sync')}>
+                <Button size='lg' bgGradient='linear(to-b, #497CFF, #001664)' onClick={() => navigate('/lip-sync')}>
                     Lip sync
                 </Button>
-                <Button size='lg' bgGradient='linear(to-b, #497CFF, #001664)' _hover={{ bg: 'unset' }} onClick={() => navigate('/live-portrait')}>
+                <Button size='lg' bgGradient='linear(to-b, #497CFF, #001664)' onClick={() => navigate('/live-portrait')}>
                     Live portrait
                 </Button>
             </ButtonGroup>
