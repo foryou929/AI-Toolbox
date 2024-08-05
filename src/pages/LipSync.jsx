@@ -28,8 +28,8 @@ const LipSync = () => {
     }
 
     return (
-        <Box h='100%' bg='url("images/background.jpg")'>
-            <Flex mx='auto' p={{ base: 8, lg: 16 }} w='100%' maxW='1440px' h='100%' direction='column' align='center' gap={4}>
+        <Box minH='100%' bg='url("images/background.jpg")' bgRepeat='no-repeat' bgSize='cover' bgAttachment='fixed'>
+            <Flex mx='auto' p={{ base: 8, lg: 16 }} w='100%' maxW='1440px' direction='column' align='center' gap={4}>
                 <Text fontSize='xxx-large' fontWeight='bold' align='center' bgGradient='linear(to-r, #FF1CF7, #00F0FF)' bgClip='text' cursor='pointer' onClick={() => navigate('/')}>
                     Lip Sync
                 </Text>
