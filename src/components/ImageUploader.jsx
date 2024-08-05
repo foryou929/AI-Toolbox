@@ -33,7 +33,7 @@ const ImageUploader = ({ onChange, ...rest }) => {
                         bg='red.500' rounded='full' cursor='pointer'
                         onClick={() => setFile(null)}
                     >
-                        <CloseIcon fontSize='x-small' color='white' />
+                        <CloseIcon fontSize='x-small' />
                     </Flex>
                     <img src={src} onError={handleError} style={{ width: '100%', height: '100%', objectFit: 'scale-down' }} />
                 </Box>

@@ -18,9 +18,9 @@ const DragDropUpload = ({ accept, onAccept }) => {
             <input {...getInputProps()} />
             <Image w={16} h={14} src='images/upload.png' />
             {isDragActive ? (
-                <Text color='white' fontWeight='bold'>Drop the files here ...</Text>
+                <Text fontWeight='bold'>Drop the files here ...</Text>
             ) : (
-                <Text color='white' fontWeight='bold'>Drag and drop a file or click to upload</Text>
+                <Text fontWeight='bold'>Drag and drop a file or click to upload</Text>
             )}
         </Flex>
     );

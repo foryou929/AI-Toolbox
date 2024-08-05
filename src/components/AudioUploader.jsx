@@ -33,7 +33,7 @@ const VideoUploader = ({ onChange, ...rest }) => {
                         bg='red.500' rounded='full' cursor='pointer'
                         onClick={() => setFile(null)}
                     >
-                        <CloseIcon fontSize='x-small' color='white' />
+                        <CloseIcon fontSize='x-small' />
                     </Flex>
                     <audio src={src} onError={handleError} controls />
                 </Flex>
