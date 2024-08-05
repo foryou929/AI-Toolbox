@@ -33,8 +33,8 @@ const LipSync = () => {
 
     return (
         <Box h='100%' bg='url("images/background.jpg")'>
-            <Flex mx='auto' p={{ base: 8, lg: 16 }} w='100%' maxW='1440px' h='100%' direction='column' gap={4}>
-                <Text fontSize='xx-large' fontWeight='bold' color='white' align='center' bgGradient='linear(to-r, #FF0080, #7928CA)' bgClip='text'>
+            <Flex mx='auto' p={{ base: 8, lg: 16 }} w='100%' maxW='1440px' h='100%' direction='column' align='center' gap={4}>
+                <Text fontSize='xx-large' fontWeight='bold' color='white' align='center' bgGradient='linear(to-r, #FF1CF7, #00F0FF)' bgClip='text'>
                     Live portrait
                 </Text>
                 <Flex w='100%' direction={{ base: 'column', lg: 'row' }} gap={4}>
