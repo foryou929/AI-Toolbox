@@ -40,12 +40,14 @@ const LipSync = () => {
                 <Flex w='100%' direction={{ base: 'column', lg: 'row' }} gap={4}>
                     <Flex w='100%' direction='column' gap={4}>
                         <Flex direction='column' gap={2}>
-                            <RadioGroup color='white' value={srcType} onChange={setSrcType}>
-                                <Flex gap={4}>
-                                    {SOURCE_TYPE.map((sourceType, index) => <Radio key={index} value={sourceType.value}>{sourceType.label}</Radio>)}
-                                </Flex>
-                            </RadioGroup>
-                            <Text fontSize='large' fontWeight='bold' color='white'>Source</Text>
+                            <Flex gap={4} align='end'>
+                                <Text fontSize='large' fontWeight='bold' color='white'>Source</Text>
+                                <RadioGroup color='white' value={srcType} onChange={setSrcType}>
+                                    <Flex gap={4}>
+                                        {SOURCE_TYPE.map((sourceType, index) => <Radio key={index} value={sourceType.value}>{sourceType.label}</Radio>)}
+                                    </Flex>
+                                </RadioGroup>
+                            </Flex>
                             {srcType == SOURCE_TYPE[0].value && <ImageUploader w='100%' aspectRatio={1.7778} bg='#FFF4' border='2px dashed #888' onChange={setSource} />}
                             {srcType == SOURCE_TYPE[1].value && <VideoUploader w='100%' aspectRatio={1.7778} bg='#FFF4' border='2px dashed #888' onChange={setSource} />}
                         </Flex>
